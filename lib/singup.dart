@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:jamas_project/login.dart';
 
-
 class SingUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class SingUpPage extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
-            },
+          },
           icon: Icon(
             Icons.arrow_back_sharp,
             size: 20,
@@ -27,8 +26,6 @@ class SingUpPage extends StatelessWidget {
           ),
         ),
       ),
-
-
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 40),
@@ -43,28 +40,24 @@ class SingUpPage extends StatelessWidget {
                   Text(
                     "Buat Akun",
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "Poppins"
-                    ),
+                        fontSize: 30,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "Poppins"),
                   ),
                   // Teks ayo daftar sekarang
-                  SizedBox(
-                    height: 20
-                  ),
+                  SizedBox(height: 20),
                   Text(
                     "Ayo daftar sekarang..",
                     style: TextStyle(
-                      fontSize: 15, 
-                      color: Colors.grey[700],
-                      fontFamily: "Poppins",
-                      fontWeight: FontWeight.w400
-                    ),
+                        fontSize: 15,
+                        color: Colors.grey[700],
+                        fontFamily: "Poppins",
+                        fontWeight: FontWeight.w400),
                   )
                 ],
               ),
 
-              // Isi Form 
+              // Isi Form
               Column(
                 children: <Widget>[
                   inputFile(label: "Nama"),
@@ -73,7 +66,7 @@ class SingUpPage extends StatelessWidget {
                 ],
               ),
 
-              // Button daftar 
+              // Button daftar
               Container(
                 padding: EdgeInsets.only(top: 3, left: 3),
                 child: MaterialButton(
@@ -84,44 +77,43 @@ class SingUpPage extends StatelessWidget {
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
-                    ),
+                  ),
                   child: Text(
                     "Daftar",
                     style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                      color: Colors.white,
-                      fontFamily: "Poppins"
-                      ),
-                    ),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontFamily: "Poppins"),
                   ),
                 ),
+              ),
 
               // Teks keterangan di bawah
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Sudah punya Akun ?",style: TextStyle(fontFamily: "Poppins"),),
+                  Text(
+                    "Sudah punya Akun ?",
+                    style: TextStyle(fontFamily: "Poppins"),
+                  ),
                   GestureDetector(
                     onTap: () {
-                     Navigator.push(context,
-                     MaterialPageRoute(builder: (context) => LoginPage())); 
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage()));
                     },
                     child: Text(
                       " Login Sekarang ",
                       style: TextStyle(
-                        fontWeight: FontWeight.w600, 
-                        fontFamily: "Poppins",
-                        fontSize: 14,
-                        color: Color(0xffFF9800)
-                        ),
-                      ),
+                          fontWeight: FontWeight.w600,
+                          fontFamily: "Poppins",
+                          fontSize: 14,
+                          color: Color(0xffFF9800)),
+                    ),
                   )
-                  ],
-               )
-
+                ],
+              )
             ],
-
           ),
         ),
       ),
@@ -129,7 +121,7 @@ class SingUpPage extends StatelessWidget {
   }
 }
 
-// Codingan Form 
+// Codingan Form
 Widget inputFile({label, obscureText = false}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,36 +129,24 @@ Widget inputFile({label, obscureText = false}) {
       Text(
         label,
         style: TextStyle(
-          fontSize: 15, 
-          fontWeight: FontWeight.w400, 
-          color: Colors.black87
-        ),
+            fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
       ),
-
       SizedBox(
         height: 5,
       ),
       TextField(
         obscureText: obscureText,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(
-            vertical: 0, 
-            horizontal: 10
-            ),
+          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
-            borderRadius: BorderRadius.circular(50)
-            ),
+              borderSide: BorderSide(color: Colors.grey),
+              borderRadius: BorderRadius.circular(50)),
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
-            borderRadius: BorderRadius.circular(50)
-            ),
-          ),
+              borderSide: BorderSide(color: Colors.grey),
+              borderRadius: BorderRadius.circular(50)),
+        ),
       ),
-      SizedBox(
-        height: 10
-      )
+      SizedBox(height: 10)
     ],
   );
 }
-

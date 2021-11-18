@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:jamas_project/buttom_nav_bar.dart';
-
+import 'package:jamas_project/data/service_api.dart';
+import 'package:jamas_project/provider/semua_produk_notifier.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,18 +19,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-   _duration() {
+  _duration() {
     var duration = Duration(seconds: 3);
     return Timer(duration, _introApp);
   }
+
   void _introApp() {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>ButtomNavbar()));
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+            builder: (_) => ChangeNotifierProvider<ListSemuaProdukProvider>(
+                  create: (_) =>
+                      ListSemuaProdukProvider(serviceApiList: ServiceApi()),
+                  child: ButtomNavbar(),
+                )));
   }
+
   @override
   void initState() {
     _duration();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +53,6 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              
               Align(
                 alignment: Alignment.center,
                 child: Container(
@@ -71,9 +82,9 @@ class _HomePageState extends State<HomePage> {
               //         "Masuk",
               //         style:
               //             TextStyle(
-              //               fontWeight: FontWeight.w600, 
-              //               fontSize: 18, 
-              //               color: Colors.white, 
+              //               fontWeight: FontWeight.w600,
+              //               fontSize: 18,
+              //               color: Colors.white,
               //               fontFamily: "Poppins"),
               //       ),
               //     ),
@@ -95,7 +106,7 @@ class _HomePageState extends State<HomePage> {
               //         "Daftar",
               //         style:
               //           TextStyle(
-              //             fontWeight: FontWeight.w600, 
+              //             fontWeight: FontWeight.w600,
               //             fontSize: 18,
               //             fontFamily: "Poppins"
               //         ),
