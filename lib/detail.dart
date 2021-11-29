@@ -31,7 +31,7 @@ class DetailPages extends StatelessWidget {
       body: Stack(
         children: [
           Image.network(
-            "http://192.168.33.37/jamasCI/assets/img/$gambar",
+            "http://jamas.dedekj.site/assets/img/$gambar",
             height: 500,
             width: double.maxFinite,
             fit: BoxFit.cover,
@@ -44,7 +44,8 @@ class DetailPages extends StatelessWidget {
                   },
                   icon: Icon(
                     LineIcons.arrowCircleLeft,
-                    color: Color(0xffFF9800),
+                    size: 40,
+                    color: Colors.black,
                   ))),
           Align(
             alignment: Alignment.bottomCenter,

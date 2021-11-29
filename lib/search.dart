@@ -35,7 +35,7 @@ class _SearchProductState extends State<SearchProduct> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DetailPages(
-                                          gambar: cariProdukPaket.gambar,
+                                          gambar: cariProdukPaket.images,
                                           judul: cariProdukPaket.namaProduk,
                                           keterangan: cariProdukPaket.deskripsi,
                                           harga: cariProdukPaket.harga,
@@ -63,7 +63,7 @@ class _SearchProductState extends State<SearchProduct> {
                             height: 5,
                           ),
                           Image.network(
-                              "http://192.168.185.55/jamasCI/assets/img/${cariProdukPaket.gambar}",
+                              "http://jamas.dedekj.site/assets/img/${cariProdukPaket.images}",
                               width: 134,
                               height: double.maxFinite,
                               fit: BoxFit.cover),
@@ -95,7 +95,7 @@ class _SearchProductState extends State<SearchProduct> {
                                   Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(
-                                      cariProdukPaket.namaToko,
+                                      cariProdukPaket.namaMitra,
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 1,
                                       style: TextStyle(
@@ -176,6 +176,7 @@ class _SearchProductState extends State<SearchProduct> {
                     icon: Icon(
                       LineIcons.arrowCircleLeft,
                       color: Color(0xffFF9800),
+                      size: 40
                     ))),
             Padding(
               padding: EdgeInsets.only(right: 30, top: 36),
@@ -222,7 +223,8 @@ class _SearchProductState extends State<SearchProduct> {
                       title: TextField(
                         controller: _controller,
                         decoration: InputDecoration(
-                            hintText: "cari masakan apa ?",
+                            hintText: "Bingung Mau Masak Apa ?",
+                            contentPadding: EdgeInsets.only(right: 18, left: 0.1) ,
                             border: InputBorder.none),
                         onChanged: (String value) {
                           setState(() {

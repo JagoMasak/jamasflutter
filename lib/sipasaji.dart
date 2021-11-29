@@ -32,7 +32,7 @@ class SiapSaji extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DetailPages(
-                                          gambar: dataProdukSaji.gambar,
+                                          gambar: dataProdukSaji.images,
                                           judul: dataProdukSaji.namaProduk,
                                           keterangan: dataProdukSaji.deskripsi,
                                           harga: dataProdukSaji.harga,
@@ -58,7 +58,7 @@ class SiapSaji extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Image.network(
-                                    "http://192.168.33.37/jamasCI/assets/img/${dataProdukSaji.gambar}",
+                                    "http://jamas.dedekj.site/assets/img/${dataProdukSaji.images}",
                                     height: 89,
                                   ),
                                   Padding(
@@ -81,7 +81,7 @@ class SiapSaji extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        dataProdukSaji.namaToko,
+                                        dataProdukSaji.namaMitra,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(
@@ -145,6 +145,7 @@ class SiapSaji extends StatelessWidget {
                     icon: Icon(
                       LineIcons.arrowCircleLeft,
                       color: Color(0xffFF9800),
+                      size: 40,
                     ))),
             Padding(
               padding: EdgeInsets.only(right: 30, top: 36),

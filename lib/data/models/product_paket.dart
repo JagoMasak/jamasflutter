@@ -31,63 +31,47 @@ class ProdukPaket {
 class Datum {
     Datum({
         required this.idProduk,
-        required this.idMitra,
-        required this.idJenis,
         required this.namaProduk,
         required this.deskripsi,
-        required this.gambar,
+        required this.jenis,
         required this.harga,
-        required this.jenisProduk,
+        required this.createdAt,
+        required this.namaKategori,
         required this.namaMitra,
-        required this.namaToko,
-        required this.alamatToko,
-        required this.nohp,
-        required this.email,
+        required this.images,
     });
 
     String idProduk;
-    String idMitra;
-    String idJenis;
     String namaProduk;
     String deskripsi;
-    String gambar;
+    String jenis;
     String harga;
-    String jenisProduk;
+    DateTime createdAt;
+    String namaKategori;
     String namaMitra;
-    String namaToko;
-    String alamatToko;
-    String nohp;
-    String email;
+    String images;
 
     factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         idProduk: json["id_produk"],
-        idMitra: json["id_mitra"],
-        idJenis: json["id_jenis"],
         namaProduk: json["nama_produk"],
         deskripsi: json["deskripsi"],
-        gambar: json["gambar"],
+        jenis: json["jenis"],
         harga: json["harga"],
-        jenisProduk: json["jenis_produk"],
+        createdAt: DateTime.parse(json["created_at"]),
+        namaKategori: json["nama_kategori"],
         namaMitra: json["nama_mitra"],
-        namaToko: json["nama_toko"],
-        alamatToko: json["alamat_toko"],
-        nohp: json["nohp"],
-        email: json["email"],
+        images: json["images"],
     );
 
     Map<String, dynamic> toJson() => {
         "id_produk": idProduk,
-        "id_mitra": idMitra,
-        "id_jenis": idJenis,
         "nama_produk": namaProduk,
         "deskripsi": deskripsi,
-        "gambar": gambar,
+        "jenis": jenis,
         "harga": harga,
-        "jenis_produk": jenisProduk,
+        "created_at": createdAt.toIso8601String(),
+        "nama_kategori": namaKategori,
         "nama_mitra": namaMitra,
-        "nama_toko": namaToko,
-        "alamat_toko": alamatToko,
-        "nohp": nohp,
-        "email": email,
+        "images": images,
     };
 }

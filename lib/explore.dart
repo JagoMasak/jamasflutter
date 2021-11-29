@@ -33,7 +33,7 @@ class Explore extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DetailPages(
-                                          gambar: dataSemuaProduk.gambar,
+                                          gambar: dataSemuaProduk.images,
                                           judul: dataSemuaProduk.namaProduk,
                                           keterangan: dataSemuaProduk.deskripsi,
                                           harga: dataSemuaProduk.harga,
@@ -62,7 +62,7 @@ class Explore extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Image.network(
-                                    "http://192.168.33.37/jamasCI/assets/img/${dataSemuaProduk.gambar}",
+                                    "http://jamas.dedekj.site/assets/img/${dataSemuaProduk.images}",
                                     height: 89,
                                   ),
                                   Padding(
@@ -85,7 +85,7 @@ class Explore extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        dataSemuaProduk.namaToko,
+                                        dataSemuaProduk.namaMitra,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(
@@ -173,7 +173,7 @@ class Explore extends StatelessWidget {
                             title: TextField(
                               readOnly: true,
                               decoration: InputDecoration(
-                                  hintText: "cari masakan apa ?",
+                                  hintText: "Bingung Mau Masak Apa ?",
                                   border: InputBorder.none),
                               onTap: () {
                                 Navigator.push(

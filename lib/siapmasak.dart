@@ -32,7 +32,7 @@ class SiapMasak extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DetailPages(
-                                          gambar: dataProdukPaket.gambar,
+                                          gambar: dataProdukPaket.images,
                                           judul: dataProdukPaket.namaProduk,
                                           keterangan: dataProdukPaket.deskripsi,
                                           harga: dataProdukPaket.harga,
@@ -58,7 +58,7 @@ class SiapMasak extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Image.network(
-                                    "http://192.168.33.37/jamasCI/assets/img/${dataProdukPaket.gambar}",
+                                    "http://jamas.dedekj.site/assets/img/${dataProdukPaket.images}",
                                     height: 89,
                                   ),
                                   Padding(
@@ -81,7 +81,7 @@ class SiapMasak extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        dataProdukPaket.namaToko,
+                                        dataProdukPaket.namaMitra,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(
@@ -145,6 +145,7 @@ class SiapMasak extends StatelessWidget {
                     icon: Icon(
                       LineIcons.arrowCircleLeft,
                       color: Color(0xffFF9800),
+                      size: 40,
                     ))),
             Padding(
               padding: EdgeInsets.only(right: 30, top: 36),
