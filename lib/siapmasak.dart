@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:jamas_project/detail.dart';
 import 'package:jamas_project/provider/product_paket_notifier.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
 
 import 'data/service_api.dart';
@@ -46,10 +46,10 @@ class SiapMasak extends StatelessWidget {
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                      offset: Offset(0, 10),
-                                      blurRadius: 10,
+                                      offset: Offset(0, 5),
+                                      blurRadius: 5,
                                       color:
-                                          Color(0xff808080).withOpacity(0.15))
+                                          Color(0xff808080).withOpacity(0.10))
                                 ],
                               ),
                               child: Column(
@@ -137,18 +137,18 @@ class SiapMasak extends StatelessWidget {
         children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Padding(
-                padding: EdgeInsets.only(left: 30, top: 33),
+                padding: EdgeInsets.only(left: 40, top: 33),
                 child: IconButton(
                     onPressed: () {
                       Navigator.pop(context);
                     },
                     icon: Icon(
-                      LineIcons.arrowCircleLeft,
+                      Iconsax.arrow_left_15,
                       color: Color(0xffFF9800),
                       size: 40,
                     ))),
             Padding(
-              padding: EdgeInsets.only(right: 30, top: 36),
+              padding: EdgeInsets.only(right: 30, top: 33),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:jamas_project/data/service_api.dart';
 import 'package:jamas_project/detail.dart';
 import 'package:jamas_project/provider/search_product_notifier.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:provider/provider.dart';
 
 class SearchProduct extends StatefulWidget {
@@ -31,16 +31,16 @@ class _SearchProductState extends State<SearchProduct> {
                   var cariProdukPaket = state.result!.data[index];
                   return GestureDetector(
                     onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DetailPages(
-                                          gambar: cariProdukPaket.images,
-                                          judul: cariProdukPaket.namaProduk,
-                                          keterangan: cariProdukPaket.deskripsi,
-                                          harga: cariProdukPaket.harga,
-                                        )));
-                          },
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DetailPages(
+                                    gambar: cariProdukPaket.images,
+                                    judul: cariProdukPaket.namaProduk,
+                                    keterangan: cariProdukPaket.deskripsi,
+                                    harga: cariProdukPaket.harga,
+                                  )));
+                    },
                     child: Container(
                       clipBehavior: Clip.antiAlias,
                       margin: EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -51,7 +51,7 @@ class _SearchProductState extends State<SearchProduct> {
                             BoxShadow(
                                 offset: Offset(0, 4),
                                 blurRadius: 4,
-                                color: Color(0xff808080).withOpacity(0.15))
+                                color: Color(0xff808080).withOpacity(0.10))
                           ],
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white,
@@ -168,18 +168,15 @@ class _SearchProductState extends State<SearchProduct> {
         child: Column(children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Padding(
-                padding: EdgeInsets.only(left: 30, top: 33),
+                padding: EdgeInsets.only(left: 40, top: 33),
                 child: IconButton(
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: Icon(
-                      LineIcons.arrowCircleLeft,
-                      color: Color(0xffFF9800),
-                      size: 40
-                    ))),
+                    icon: Icon(Iconsax.arrow_left_15,
+                        color: Color(0xffFF9800), size: 40))),
             Padding(
-              padding: EdgeInsets.only(right: 30, top: 36),
+              padding: EdgeInsets.only(right: 30, top: 33),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -202,7 +199,7 @@ class _SearchProductState extends State<SearchProduct> {
               child: Consumer<ListCariProdukProvider>(
                   builder: (context, state, _) {
                 return Container(
-                    width: 315,
+                    width: 320,
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
@@ -210,21 +207,23 @@ class _SearchProductState extends State<SearchProduct> {
                               blurRadius: 4,
                               color: Color(0xff808080).withOpacity(0.15))
                         ],
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                         border: Border.all(
                             width: 1, color: Colors.black.withOpacity(0.3))),
                     child: ListTile(
-                      leading: Icon(
-                        Icons.search,
-                        size: 24,
-                        color: Colors.black,
-                      ),
                       title: TextField(
+                        textAlign: TextAlign.start,
                         controller: _controller,
                         decoration: InputDecoration(
                             hintText: "Bingung Mau Masak Apa ?",
-                            contentPadding: EdgeInsets.only(right: 18, left: 0.1) ,
+                            icon: Icon(
+                              Icons.search,
+                              size: 24,
+                              color: Colors.black,
+                            ),
+                            contentPadding:
+                                EdgeInsets.only(right: 20, left: 0.1),
                             border: InputBorder.none),
                         onChanged: (String value) {
                           setState(() {

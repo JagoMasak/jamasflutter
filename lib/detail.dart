@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DetailPages extends StatelessWidget {
@@ -32,20 +32,20 @@ class DetailPages extends StatelessWidget {
         children: [
           Image.network(
             "http://jamas.dedekj.site/assets/img/$gambar",
-            height: 500,
+            height: 362,
             width: double.maxFinite,
-            fit: BoxFit.cover,
+            fit: BoxFit.fitHeight,
           ),
           Padding(
-              padding: EdgeInsets.only(left: 30, top: 33),
+              padding: EdgeInsets.only(left: 40, top: 40),
               child: IconButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
                   icon: Icon(
-                    LineIcons.arrowCircleLeft,
+                    Iconsax.arrow_left_15,
                     size: 40,
-                    color: Colors.black,
+                    color: Colors.black
                   ))),
           Align(
             alignment: Alignment.bottomCenter,
@@ -55,7 +55,7 @@ class DetailPages extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(30),
                       topLeft: Radius.circular(30))),
-              height: 400,
+              height: 556,
               width: double.infinity,
               child: Padding(
                 padding: EdgeInsets.only(top: 42, left: 33),
@@ -68,7 +68,7 @@ class DetailPages extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 27,
                               fontFamily: "Poppins",
-                              fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w800),
                         )),
                     Padding(
                       padding: EdgeInsets.only(top: 10),
@@ -77,15 +77,16 @@ class DetailPages extends StatelessWidget {
                           child: Text(
                             "$keterangan",
                             overflow: TextOverflow.ellipsis,
-                            maxLines: 3,
+                            textAlign: TextAlign.left,
+                            maxLines: 7,
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14,
                                 fontFamily: "Poppins",
-                                fontWeight: FontWeight.w400),
+                                ),
                           )),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 49),
+                      padding: EdgeInsets.only(top: 30),
                       child: Align(
                           alignment: Alignment.topLeft,
                           child: Text(
@@ -93,7 +94,7 @@ class DetailPages extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 20,
                                 fontFamily: "Poppins",
-                                fontWeight: FontWeight.w600),
+                                fontWeight: FontWeight.w700),
                           )),
                     ),
                     Padding(
@@ -105,10 +106,10 @@ class DetailPages extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 16,
                                 fontFamily: "Poppins",
-                                fontWeight: FontWeight.w700),
+                                fontWeight: FontWeight.w600),
                           )),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 70),
                     Padding(
                       padding: EdgeInsets.only(left: 30, right: 60),
                       child: MaterialButton(
@@ -119,7 +120,7 @@ class DetailPages extends StatelessWidget {
                           _openWA(judul, keterangan, harga);
                         },
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50)),
+                            borderRadius: BorderRadius.circular(15)),
                         child: Text(
                           "Pesan Sekarang",
                           style: TextStyle(

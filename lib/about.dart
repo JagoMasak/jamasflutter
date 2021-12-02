@@ -34,7 +34,7 @@ class AboutJamas extends StatelessWidget {
             Container(
               height: 80,
               width: 350,
-              color: Colors.white,
+              color: Color(0xffFAFAFA),
               child: Text(
                 'Sebuah platfrom berbasis android yang membahas mengenai kebutuhan ibu rumah tangga',
                 maxLines: 3,
@@ -49,14 +49,14 @@ class AboutJamas extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top:20,left: 80, right: 80),
               child: MaterialButton(
-                          height: 50,
+                          height: 60,
                           minWidth: double.infinity,
                           color: Color(0xffFF9800),
                           onPressed: () {
                             
                           },
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50)),
+                              borderRadius: BorderRadius.circular(15)),
                           child: Text(
                             "Info Lebih Lanjut",
                             style: TextStyle(

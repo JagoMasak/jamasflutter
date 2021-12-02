@@ -45,10 +45,10 @@ class HomeScreen extends StatelessWidget {
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                      offset: Offset(0, 10),
-                                      blurRadius: 10,
+                                      offset: Offset(0, 5),
+                                      blurRadius: 5,
                                       color:
-                                          Color(0xff808080).withOpacity(0.15))
+                                          Color(0xff808080).withOpacity(0.10))
                                 ],
                               ),
                               child: Column(
@@ -164,7 +164,7 @@ class HomeScreen extends StatelessWidget {
                     Align(
                         alignment: Alignment.center,
                         child: Container(
-                            width: 315,
+                            width: 320,
                             decoration: BoxDecoration(
                                 boxShadow: [
                                   BoxShadow(
@@ -173,21 +173,21 @@ class HomeScreen extends StatelessWidget {
                                       color:
                                           Color(0xff808080).withOpacity(0.15))
                                 ],
-                                borderRadius: BorderRadius.circular(30),
+                                borderRadius: BorderRadius.circular(20),
                                 color: Colors.white,
                                 border: Border.all(
                                     width: 1,
                                     color: Colors.black.withOpacity(0.3))),
                             child: ListTile(
-                              leading: Icon(
-                                Icons.search,
-                                size: 24,
-                                color: Colors.black,
-                              ),
                               title: TextField(
                                 readOnly: true,
                                 decoration: InputDecoration(
                                     hintText: "Bingung Mau Masak Apa ?",
+                                    icon: Icon(
+                                Icons.search,
+                                size: 24,
+                                color: Colors.black,
+                              ),
                                     border: InputBorder.none),
                                 onTap: () {
                                   Navigator.push(

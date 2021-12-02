@@ -13,6 +13,7 @@ class LoginPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
+        // ignore: deprecated_member_use
         brightness: Brightness.light,
         backgroundColor: Colors.white,
         leading: IconButton(
