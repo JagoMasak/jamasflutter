@@ -32,8 +32,8 @@ class SiapMasak extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DetailPages(
-                                          gambar: dataProdukPaket.images,
-                                          judul: dataProdukPaket.namaProduk,
+                                          gambar: dataProdukPaket.gambar[0].url,
+                                          judul: dataProdukPaket.nama,
                                           keterangan: dataProdukPaket.deskripsi,
                                           harga: dataProdukPaket.harga,
                                         )));
@@ -58,7 +58,7 @@ class SiapMasak extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Image.network(
-                                    "http://jamas.dedekj.site/assets/img/${dataProdukPaket.images}",
+                                    dataProdukPaket.gambar[0].url,
                                     height: 89,
                                   ),
                                   Padding(
@@ -66,7 +66,7 @@ class SiapMasak extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        dataProdukPaket.namaProduk,
+                                        dataProdukPaket.nama,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(
@@ -81,7 +81,7 @@ class SiapMasak extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        dataProdukPaket.namaMitra,
+                                        dataProdukPaket.penjual,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(

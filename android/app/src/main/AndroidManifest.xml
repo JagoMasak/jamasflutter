@@ -13,13 +13,13 @@
     <supports-screens
     android:largeScreens="true"
     android:normalScreens="true"
-    android:smallScreens="true"
+    android:smallScreens="false"
     android:xlargeScreens="false"
     
     />
    <application
-        android:label="Jamas App"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Jamas"
+        android:icon="@drawable/icon_jamas">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

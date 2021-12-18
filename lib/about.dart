@@ -46,28 +46,28 @@ class AboutJamas extends StatelessWidget {
                   fontWeight: FontWeight.w100
                   ),),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top:20,left: 80, right: 80),
-              child: MaterialButton(
-                          height: 60,
-                          minWidth: double.infinity,
-                          color: Color(0xffFF9800),
-                          onPressed: () {
+            // Padding(
+            //   padding: const EdgeInsets.only(top:20,left: 80, right: 80),
+            //   child: MaterialButton(
+            //               height: 60,
+            //               minWidth: double.infinity,
+            //               color: Color(0xffFF9800),
+            //               onPressed: () {
                             
-                          },
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                          child: Text(
-                            "Info Lebih Lanjut",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontFamily: "Poppins",
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-            ),
+            //               },
+            //               shape: RoundedRectangleBorder(
+            //                   borderRadius: BorderRadius.circular(15)),
+            //               child: Text(
+            //                 "Info Lebih Lanjut",
+            //                 style: TextStyle(
+            //                   fontSize: 18,
+            //                   fontFamily: "Poppins",
+            //                   fontWeight: FontWeight.w600,
+            //                   color: Colors.white,
+            //                 ),
+            //               ),
+            //             ),
+            // ),
           ],
         ),
       ),

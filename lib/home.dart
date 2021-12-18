@@ -31,8 +31,8 @@ class HomeScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DetailPages(
-                                          gambar: dataSemuaProduk.images,
-                                          judul: dataSemuaProduk.namaProduk,
+                                          gambar: dataSemuaProduk.gambar[0].url,
+                                          judul: dataSemuaProduk.nama,
                                           keterangan: dataSemuaProduk.deskripsi,
                                           harga: dataSemuaProduk.harga,
                                         )));
@@ -57,7 +57,7 @@ class HomeScreen extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Image.network(
-                                    "http://jamas.dedekj.site/assets/img/${dataSemuaProduk.images}",
+                                    dataSemuaProduk.gambar[0].url,
                                     height: 89,
                                   ),
                                   Padding(
@@ -65,7 +65,7 @@ class HomeScreen extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        dataSemuaProduk.namaProduk,
+                                        dataSemuaProduk.nama,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(
@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        dataSemuaProduk.namaMitra,
+                                        dataSemuaProduk.penjual,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(

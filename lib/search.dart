@@ -35,8 +35,8 @@ class _SearchProductState extends State<SearchProduct> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => DetailPages(
-                                    gambar: cariProdukPaket.images,
-                                    judul: cariProdukPaket.namaProduk,
+                                    gambar: cariProdukPaket.gambar[0].url,
+                                    judul: cariProdukPaket.nama,
                                     keterangan: cariProdukPaket.deskripsi,
                                     harga: cariProdukPaket.harga,
                                   )));
@@ -63,7 +63,7 @@ class _SearchProductState extends State<SearchProduct> {
                             height: 5,
                           ),
                           Image.network(
-                              "http://jamas.dedekj.site/assets/img/${cariProdukPaket.images}",
+                              cariProdukPaket.gambar[0].url,
                               width: 134,
                               height: double.maxFinite,
                               fit: BoxFit.cover),
@@ -79,7 +79,7 @@ class _SearchProductState extends State<SearchProduct> {
                                   Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(
-                                      cariProdukPaket.namaProduk,
+                                      cariProdukPaket.nama,
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 1,
                                       style: TextStyle(
@@ -95,7 +95,7 @@ class _SearchProductState extends State<SearchProduct> {
                                   Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(
-                                      cariProdukPaket.namaMitra,
+                                      cariProdukPaket.penjual,
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 1,
                                       style: TextStyle(
@@ -140,7 +140,7 @@ class _SearchProductState extends State<SearchProduct> {
           } else if (state.state == StateResult.Error) {
             state.fetchCariProduk(_query);
             return Center(
-              child: Text("sepertinya ada masalah"),
+              child: Text("produk tidak ditemukan"),
             );
           } else {
             return Center(

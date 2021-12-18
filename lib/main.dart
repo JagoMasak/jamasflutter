@@ -1,16 +1,22 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:jamas_project/buttom_nav_bar.dart';
 import 'package:jamas_project/data/service_api.dart';
 import 'package:jamas_project/provider/semua_produk_notifier.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MaterialApp(
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitDown,DeviceOrientation.portraitUp]).then((_){
+     runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: HomePage(),
   ));
+
+  });
+ 
 }
 
 class HomePage extends StatefulWidget {

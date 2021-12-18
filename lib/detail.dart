@@ -31,8 +31,8 @@ class DetailPages extends StatelessWidget {
       body: Stack(
         children: [
           Image.network(
-            "http://jamas.dedekj.site/assets/img/$gambar",
-            height: 362,
+            "$gambar",
+            height: 372,
             width: double.maxFinite,
             fit: BoxFit.fitHeight,
           ),
@@ -55,7 +55,7 @@ class DetailPages extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(30),
                       topLeft: Radius.circular(30))),
-              height: 556,
+              height: 456,
               width: double.infinity,
               child: Padding(
                 padding: EdgeInsets.only(top: 42, left: 33),
@@ -74,15 +74,19 @@ class DetailPages extends StatelessWidget {
                       padding: EdgeInsets.only(top: 10),
                       child: Align(
                           alignment: Alignment.topLeft,
-                          child: Text(
-                            "$keterangan",
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            maxLines: 7,
-                            style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: "Poppins",
-                                ),
+                          child: Container(
+                            padding: EdgeInsets.only(right: 20),
+                            width: 400,
+                            child: Text(
+                              "$keterangan",
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.left,
+                              maxLines: 5,
+                              style: TextStyle(
+                                  fontSize: 14,
+                                  fontFamily: "Poppins",
+                                  ),
+                            ),
                           )),
                     ),
                     Padding(

@@ -26,14 +26,15 @@ class SiapSaji extends StatelessWidget {
                           crossAxisCount: 2),
                       itemBuilder: (context, index) {
                         var dataProdukSaji = state.result!.data[index];
+                        //var dataGambar = state.result!.data[index].gambar[index].url;
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DetailPages(
-                                          gambar: dataProdukSaji.images,
-                                          judul: dataProdukSaji.namaProduk,
+                                          gambar: dataProdukSaji.gambar[0].url,
+                                          judul: dataProdukSaji.nama,
                                           keterangan: dataProdukSaji.deskripsi,
                                           harga: dataProdukSaji.harga,
                                         )));
@@ -58,7 +59,7 @@ class SiapSaji extends StatelessWidget {
                                     height: 5,
                                   ),
                                   Image.network(
-                                    "http://jamas.dedekj.site/assets/img/${dataProdukSaji.images}",
+                                    dataProdukSaji.gambar[0].url,
                                     height: 89,
                                   ),
                                   Padding(
@@ -66,7 +67,7 @@ class SiapSaji extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        dataProdukSaji.namaProduk,
+                                        dataProdukSaji.nama,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(
@@ -81,7 +82,7 @@ class SiapSaji extends StatelessWidget {
                                     child: Align(
                                       alignment: Alignment.centerLeft,
                                       child: Text(
-                                        dataProdukSaji.namaMitra,
+                                        dataProdukSaji.penjual,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(
